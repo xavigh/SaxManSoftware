@@ -5,12 +5,12 @@ html {
 }
 
 body {
-font-family: 'Open Sans', sans-serif;
-margin:0;
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
 
 }
 
-h2 {
+h1 {
     font-family: 'Caveat', cursive;
     font-weight: 400;
 }
