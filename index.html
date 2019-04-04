@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge"> 
- 
-  <link rel="stylesheet" href="css/bootstrap.min.css">  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Caveat|Caveat+Brush|Open+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.slim.min.js"></script>
@@ -16,42 +16,50 @@
   <title>Sax Man Sofware / Music Technology</title>
 </head>
 
-<body class="bg-dark text-white">
+<body>
 
   <!-- Header staff here -->
-  <header class="text-center bg-secondary">
-    <img class="img-thumbnail" src="images/saxoPlayer.jpeg" alt="logo" width="304" height="236">
-    <h1 class="float-right">Sax Man Digital Goods</h1>
+  <header class="container">
+    <div class="content-wrap">
+      <img src="images/saxoPlayer.jpeg" alt="logo" width="304" height="236">
+      <h1>Sax Man Digital Goods</h1>
+    </div>
   </header><!-- container -->
 
 <!-- Main content here -->
   <main>
-    <!-- htis is just a test of the van-pills -->
-    
-    <ul class="nav nav-pills justify-content-center bg-se">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
-      </li>
-      <li class="nav-item dropdown">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tech news</a>
+     <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon bg-white"></span>
+    </button>
 
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">HLX</a>
-          <a class="dropdown-item" href="#">Boss</a>
-          <a class="dropdown-item" href="#">Line 6</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Software</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tech News</a>
-      </li>
-    </ul>
+    <!-- htis is just a test of the van-pills -->
+    <nav class="navbar-expand-sm" id="collapsibleNavbar">
+      <ul class="navbar-nav nav-pills justify-content-center bg-md">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">HLX</a>
+            <a class="dropdown-item" href="#">Boss</a>
+            <a class="dropdown-item" href="#">Line 6</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Software</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tech News</a>
+        </li>
+      </ul>
+    </nav>
 
     <section class="container">
-      <h1>HLX Midi controler</h1>
+      <h2>HLX Midi controler</h2>
       <img class="img-fluid" src="images/midTech2.jpeg" alt="music technology device midi controler">
       <p>What is Lorem Ipsum?
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -72,7 +80,7 @@
 
 
   </main>
-  <footer class="container bg-#030708" ;>
+  <footer class="bg-secondary" >
     <p>What is Lorem Ipsum?
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
       Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
