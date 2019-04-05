@@ -29,8 +29,9 @@ h1, h2 {
  margin-right: auto;
  width: 100%;
  border-radius: 50%;
+ width:50%;
+ height:50%;
 }
 .content-wrap h1{
  text-align: center;
-
 }
