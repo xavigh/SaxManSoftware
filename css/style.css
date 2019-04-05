@@ -15,22 +15,37 @@ h1, h2 {
 }
 
 /* Header */
-.content-wrap {
+header {
+  background-image: linear-gradient(to left, rgba(200,200,255,1), rgba(0,0,0,1));
+
+  overflow:auto;
+  border-bottom: 2px solid white;
+}
+
+/* .content-wrap {
  display: block;
  margin-left: auto;
  margin-right: auto;
  width: 50%;
+ } */
 
-}
+header img{
+ align-self: left;
+ border-radius: 80%;
+ float:left;
+ }
 
-.content-wrap img{
+header h1{
+ font-size: 4em;
  display: block;
- margin-left: auto;
- margin-right: auto;
+ text-align:center;
+ font-size:6vw;
+ padding-top:1em;
+ padding-top:auto;
+ padding-bottom:auto;
  width: 100%;
- border-radius: 50%;
 }
-.content-wrap h1{
- text-align: center;
 
+footer {
+    background-image: linear-gradient(to left, rgba(200,200,255,1), rgba(0,0,0,1));
 }
