@@ -16,7 +16,7 @@ h1, h2, h3 {
 
 /* Header */
 header {
-  background-image: linear-gradient(to left, rgba(200,200,255,1), rgba(0,0,0,1));
+  background-image: linear-gradient(to left, rgba(0,0,0,1), rgba(75,0,0,0));
 
   overflow:auto;
   border-bottom: 1px solid white;
