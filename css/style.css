@@ -8,7 +8,7 @@ body {
 
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Caveat', cursive;
     font-weight: 400;
     align-self: center;
@@ -16,24 +16,54 @@ h1, h2 {
 }
 
 /* Header */
-.content-wrap {
+header {
+  background-image: linear-gradient(to left, rgba(0,0,0,1), rgba(75,0,0,0));
+
+  overflow:auto;
+  border-bottom: 1px solid white;
+}
+
+/* .content-wrap {
  display: block;
  margin-left: auto;
  margin-right: auto;
  width: 50%;
+ } */
 
-}
+header img{
+ align-self: left;
+ border-radius: 80%;
+ float:left;
+ }
 
-.content-wrap img{
+header h1{
+ font-size: 4em;
  display: block;
- margin-left: auto;
- margin-right: auto;
+ font-size:6vw;
+ padding-top:1em;
+ padding-left:5em;
  width: 100%;
- border-radius: 50%;
- width:50%;
- height:50%;
 }
+<<<<<<< HEAD
 .content-wrap h1{
  text-align: center;
  font-size:4vw;
+=======
+/* Video */
+.video1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:1em;
+
+}
+.content-col p {
+ padding-top:1em;
+}
+
+
+
+footer {
+    background-image: linear-gradient(to left, rgba(200,200,255,1), rgba(0,0,0,1));
+>>>>>>> 7463fdb812a4350fef530450083fe7e6935c7539
 }
