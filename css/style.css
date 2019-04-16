@@ -17,7 +17,6 @@ h1, h2, h3 {
 /* Header */
 header {
   background-image: linear-gradient(to left, rgba(0,0,0,1), rgba(75,0,0,0));
-
   overflow:auto;
   border-bottom: 1px solid white;
 }
@@ -43,6 +42,12 @@ header h1{
  padding-left:5em;
  width: 100%;
 }
+/*PRIMARY NAVIGATION BAR customized  */
+#collapsibleNavbar a {
+  padding: 0 2em;
+}
+
+
 /* Video */
 .video1 {
   display: block;
