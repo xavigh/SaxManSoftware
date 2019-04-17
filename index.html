@@ -21,21 +21,16 @@
   <!-- Header staff here -->
   <header>
     <div class="row">
-
-              <div class="col-sm-6 col-lg-6 col-xl-6">
+              <div class="col-sm-4 col-lg-4 col-xl-4">
                   <img class="img-fluid" src="images/saxoPlayer.jpeg" alt="logo" title="Saxo player"/>
 
               </div>
-              <div class="col-sm-6 col-lg-6 col-xl-6 align-text-bottom ">
-
-
-
+              <div class="col-sm-8 col-lg-8 col-xl-8 align-text-bottom ">
+                <h1 class="text-left vertical-center">Sax Man Digital Goods</h1>
               </div>
-
    </div> <!--end row -->
-   <h1 class="text-center">Sax Man Digital Goods</h1>
 
-   <div class="login text-right">
+   <div class="container border border-top-0 border-left-0 border-right-0 text-right">
        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">login</button>
      | <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Register</button>
    </div>
@@ -45,19 +40,36 @@
     <!-- Modal -->
 
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-sm">
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content text-dark ">
       <div class="modal-header">
+        <h4 class="modal-title">login</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+
+        </div>
+        <div class="modal-body was-validated" >
+          <!-- FORM TO SUBMIT -->
+          <form action="/JSON FILE">
+            <div class="form-group">
+              <label for="email">Email address:</label>
+              <input type="email" class="form-control" id="email" maxlength="30"  required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" minlength="3" maxlength="12" required>
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
     </div>
   </div>
 </div>
@@ -91,13 +103,13 @@
     <!-- Media section -->
     <section class="video1">
       <h2 class="text-center">First product video sample</h3>
-        <video class="media border video1" width="400" height="240" controls>
+        <video class="media border video1"  height="240" controls>
           <source src="media/big_buck_bunny.mp4" type="video/mp4">
 
             Your browser does not support HTML5 video.
         </video>
         <p class="text-center">
-          This is Video Sample don't panic Edu !!! lol
+          This is a Video Sample !
           <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
         </p>
     </section>
