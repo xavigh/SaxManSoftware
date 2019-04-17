@@ -1,16 +1,59 @@
-/* start css stylesheet using bootstrap too so avoid using !important */
-
-html {
-    /* background-color: #030708; */
-}
+/* start css stylesheet using bootstrap too so avoid using !important in your css style custom*/
 
 body {
-font-family: 'Open Sans', sans-serif;
-margin:0;
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+    background-color: #191919;
+    color:white;
 
 }
 
-h2 {
+h1, h2, h3 {
     font-family: 'Caveat', cursive;
     font-weight: 400;
+    align-self: center;
+}
+
+/* Header */
+
+
+/* .content-wrap {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 50%;
+ } */
+
+header img{
+ align-self: left;
+ border-radius: 80%;
+ width:50%;
+ }
+
+
+/*PRIMARY NAVIGATION BAR customized  */
+#collapsibleNavbar a {
+  padding: 0 2em;
+}
+
+
+/* Video */
+.video1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:1em;
+
+}
+.content-col {
+  padding-top: 2em;
+}
+.content-col p {
+ padding-top:1em;
+}
+
+
+
+footer {
+    background-image: linear-gradient(to left, rgba(200,200,255,1), rgba(0,0,0,1));
 }
