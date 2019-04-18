@@ -31,8 +31,8 @@
 
    </div> <!--end row -->
    <div class="container border border-top-0 border-left-0 border-right-0 text-right">
-       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">login</button>
-     | <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Register</button>
+       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Login</button>
+     | <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#registerModal">Register</button>
    </div>
    <!-- NAVIGATION BAR -->
        <nav class="navbar navbar-expand-sm" id="collapsibleNavbar" role="navigation">
@@ -62,20 +62,19 @@
 
 
 
-    <!-- Modal -->
-
+    <!-- Modal class to add login -->
 <div id="myModal" class="container modal fade" role="dialog">
   <div class="modal-dialog modal-sm">
     <!-- Modal content-->
     <div class="modal-content text-dark ">
-      <div class="modal-header">
-        <h4 class="modal-title">login</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-
+        <div class="modal-header">
+          <h4 class="modal-title">login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+
         <div class="modal-body was-validated" >
           <!-- FORM TO SUBMIT -->
-          <form action="/JSON FILE">
+          <form action="/JSON FILE to be added" class="needs-validation" >
             <div class="form-group">
               <label for="email">Email address:</label>
               <input type="email" class="form-control" id="email" maxlength="30"  required>
@@ -91,6 +90,68 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap modal2 form to Register  -->
+<div id="registerModal" class="container modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content text-dark ">
+      <div class="modal-header">
+        <h4 class="modal-title">Register</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <div class="modal-body was-validated" >
+          <!-- FORM TO SUBMIT -->
+          <form action="/JSON FILE to be added" class="RegisterValidation" >
+            <div class="form-group">
+              <label for="fname">First Name:</label>
+              <input type="text" class="form-control"  id="fname"  >
+            </div>
+            <div class="form-group">
+              <label for="surname">Surname:</label>
+              <input type="text" class="form-control"   id="surname"  >
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" class="form-control"   id="address"  >
+            </div>
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" class="form-control"  id="city">
+            </div>
+            <div class="form-group">
+              <label for="country">Country:</label>
+              <input type="text" class="form-control"  id="country">
+            </div>
+            <div class="form-group">
+              <label for="postalCode">postalCode:</label>
+              <input type="text" class="form-control"  id="postalCode">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address:</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" >
+            </div>
+            <div class="form-group">
+              <label for="pwd2">Repeat password:</label>
+              <input type="repeatPassword" class="form-control" id="pwd2" >
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
