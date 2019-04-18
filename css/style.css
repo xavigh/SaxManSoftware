@@ -15,7 +15,10 @@ h1, h2, h3 {
 }
 
 /* Header */
-
+/*if used fixed-top then  */
+/* header {
+  background-color: #191919;
+} */
 
 /* .content-wrap {
  display: block;
@@ -35,7 +38,12 @@ header img{
 #collapsibleNavbar a {
   padding: 0 2em;
 }
+/* main content */
 
+/* if used fixed-top then */
+/* main {
+  margin-top:20%;
+} */
 
 /* Video */
 .video1 {

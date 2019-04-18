@@ -19,27 +19,52 @@
 <body class="container">
 
   <!-- Header staff here -->
-  <header>
+  <header class="container" >
     <div class="row">
               <div class="col-sm-4 col-lg-4 col-xl-4">
                   <img class="img-fluid" src="images/saxoPlayer.jpeg" alt="logo" title="Saxo player"/>
 
               </div>
-              <div class="col-sm-8 col-lg-8 col-xl-8 align-text-bottom ">
+              <div class="col-sm-8 col-lg-8 col-xl-8 align-text-bottom">
                 <h1 class="text-left vertical-center">Sax Man Digital Goods</h1>
               </div>
-   </div> <!--end row -->
 
+   </div> <!--end row -->
    <div class="container border border-top-0 border-left-0 border-right-0 text-right">
        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">login</button>
      | <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Register</button>
    </div>
-</header><!-- container -->
+   <!-- NAVIGATION BAR -->
+       <nav class="navbar navbar-expand-sm" id="collapsibleNavbar" role="navigation">
+          <ul class="navbar-nav nav-pills justify-content-center bg-md">
 
-<main><!-- Main content here -->
+             <li class="nav-item">
+                 <a class="nav-link active" href="#">Home</a>
+             </li>
+             <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
+
+                 <div class="dropdown-menu">
+                             <a class="dropdown-item" href="products.html">HLX</a>
+                             <a class="dropdown-item" href="products.html">Boss</a>
+                             <a class="dropdown-item" href="products.html">Line 6</a>
+                 </div>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="products.html">Software</a>
+            </li>
+            <li class="nav-item">
+                 <a class="nav-link" href="technews.html">Tech News</a>
+            </li>
+         </ul>
+       </nav>
+            <!-- navbar end tag-->
+
+
+
     <!-- Modal -->
 
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" class="container modal fade" role="dialog">
   <div class="modal-dialog modal-sm">
     <!-- Modal content-->
     <div class="modal-content text-dark ">
@@ -61,8 +86,7 @@
             </div>
             <div class="form-group form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Remember me
-              </label>
+                <input class="form-check-input" type="checkbox"> Remember me </label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -73,35 +97,12 @@
     </div>
   </div>
 </div>
-
-    <nav class="navbar-expand-sm" id="collapsibleNavbar">
-       <ul class="navbar-nav nav-pills justify-content-center bg-md">
-
-          <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
-
-              <div class="dropdown-menu">
-                          <a class="dropdown-item" href="products.html">HLX</a>
-                          <a class="dropdown-item" href="products.html">Boss</a>
-                          <a class="dropdown-item" href="products.html">Line 6</a>
-              </div>
-         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="products.html">Software</a>
-         </li>
-         <li class="nav-item">
-              <a class="nav-link" href="technews.html">Tech News</a>
-         </li>
-      </ul>
-
-    </nav>
+</header><!-- header end tag -->
 
 
+<main class=" container row" ><!-- Main content here -->
     <!-- Media section -->
-    <section class="video1">
+    <section class="container video1 col-sm-12 ">
       <h2 class="text-center">First product video sample</h3>
         <video class="media border video1"  height="240" controls>
           <source src="media/big_buck_bunny.mp4" type="video/mp4">
