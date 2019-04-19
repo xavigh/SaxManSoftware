@@ -96,7 +96,7 @@
     </div>
   </div>
 </div>
-<!-- Bootstrap modal2 form to Register  -->
+<!-- Bootstrap modal2 form to Register user -->
 <div id="registerModal" class="container modal fade" role="dialog">
   <div class="modal-dialog modal-sm">
     <!-- Modal content-->
@@ -107,14 +107,16 @@
       </div>
         <div class="modal-body was-validated" >
           <!-- FORM TO SUBMIT -->
-          <form action="/JSON FILE to be added" class="RegisterValidation" >
+          <form action="sdfs" name="myForm"   class="RegisterValidation" >
             <div class="form-group">
               <label for="fname">First Name:</label>
-              <input type="text" class="form-control"  id="fname"  >
+                <input type="text" name="fname" class="form-control"  id="fname">
+
             </div>
             <div class="form-group">
               <label for="surname">Surname:</label>
               <input type="text" class="form-control"   id="surname"  >
+              <div id="er-surname"> </div>
             </div>
             <div class="form-group">
               <label for="address">Address:</label>
@@ -148,7 +150,7 @@
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox"> Remember me </label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" onclick="validateForm()" class="btn btn-primary">Submit</button>
           </form>
         </div>
 
@@ -223,6 +225,7 @@
       Lorem Ipsum.</p>
   </footer>
 </body>
+<script src="js/validateForm.js"></script>
 <script src="js/jquery.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
