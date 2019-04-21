@@ -59,8 +59,13 @@ header img{
 .content-col p {
  padding-top:1em;
 }
-
-
+/* Form togle errors */
+.hide{
+  display:none;
+}
+#er-fname, #er-surname, #er-email {
+  color: red;
+}
 
 footer {
     background-image: linear-gradient(to left, rgba(200,200,255,1), rgba(0,0,0,1));
