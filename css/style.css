@@ -8,12 +8,16 @@ body {
 
 }
 
-h1, h2, h3 {
+h2, h3 {
     font-family: 'Caveat', cursive;
     font-weight: 400;
     align-self: center;
 }
 
+h1 {
+  /* font-family: 'Boogaloo', cursive; */
+  font-family:'Allerta Stencil', 'Wendy One', 'Caveat',  sans-serif;
+}
 /* Header */
 /*if used fixed-top then  */
 /* header {
