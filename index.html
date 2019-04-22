@@ -76,14 +76,14 @@
 
         <div class="modal-body was-validated" >
           <!-- FORM to login -->
-          <form action="/JSON FILE to be added" class="needs-validation" >
+          <form action="/JSON FILE to be added" class="needs-validation" autocomplete = "on">
             <div class="form-group">
               <label for="email">Email address:</label>
               <input type="email" class="form-control" id="email1" maxlength="30"  required>
             </div>
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd" minlength="3" maxlength="12" required>
+              <input type="password" autocomplete = "on" class="form-control" id="pwdLogin" minlength="3" maxlength="12" required>
             </div>
             <div class="form-group form-check">
               <label class="form-check-label">
@@ -109,7 +109,7 @@
       </div>
         <div class="modal-body was-validated" >
           <!-- FORM REGISTER -->
-          <form action="#" name="myForm"   class="RegisterValidation" >
+          <form action="#" name="myForm"   class="RegisterValidation" autocomplete = "on">
             <div class="form-group">
               <label for="fname">First Name:</label>
                 <input type="text"  class="form-control"  id="fname">
@@ -127,8 +127,16 @@
             </div>
             <div class="form-group">
               <label for="city">City:</label>
-              <input type="text" class="form-control"  id="city">
-            </div>
+              <select  value="select city" class="form-control" id="selection">
+                  <option value="select city">select city</option>
+                  <option value="Barcelona">Barcelona</option>
+                  <option value="Tarragona">Tarragona</option>
+                  <option value="Lérida">Lérida</option>
+                  <option value="Girona">Girona</option>
+              </select>
+              <div id="er-city" class="not-hide"> </div>
+             </div>
+             <!-- Provincias select list  -->
             <div class="form-group">
               <label for="country">Country:</label>
               <input type="text" class="form-control"  id="country">
@@ -144,7 +152,7 @@
             </div>
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd" >
+              <input type="password" class="form-control" id="pwd" autocomplete = "on" >
             </div>
             <div class="form-group">
               <label for="pwd2">Repeat password:</label>
