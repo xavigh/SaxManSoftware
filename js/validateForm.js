@@ -2,16 +2,17 @@
 //validate Register form
 function validateForm(){
       // form input values
-      var fname    = document.querySelector('#fname').value;
-      var surname  = document.querySelector('#surname').value;
-      var email2   = document.querySelector('#email2').value;
-      var selectList = document.querySelector('#selection').value;
-      var password = document.querySelector('#pwd').value;
-      var password = document.querySelector('#pwd2').value;
+      var fname    = document.querySelector('#fname');
+      var surname  = document.querySelector('#surname');
+      var email2   = document.querySelector('#email2');
+      var selectList = document.querySelector('#selection');
+      var password = document.querySelector('#pwd');
+      var password = document.querySelector('#pwd2');
       // testing use
       // console.log("fname = "+fname +",surname = "+ surname + ",email2 = " + email2)
       // regExp to validate input email format
       var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
       // error messages target element
       var erFname = document.querySelector('#er-fname');
       var erSurname = document.querySelector('#er-surname');
@@ -24,34 +25,53 @@ function validateForm(){
       erCity.classList.add('hide');
       let noErr = true;
 
+      fname.classList.remove('is-invalid');
+      fname.classList.add('is-valid');
+      surname.classList.remove('is-invalid');
+      surname.classList.add('is-valid');
+      selectList.classList.remove('is-invalid');
+      selectList.classList.add('is-valid');
+      email2.classList.remove('is-invalid');
+      email2.classList.add('is-valid');
+
+
       //validation of input fields star here
-      if (fname == "" || fname.length < 3) {
+      if (fname.value == "" || fname.value.length < 3) {
             event.preventDefault();
             event.stopPropagation();
             erFname.classList.remove('hide');
+            fname.classList.remove('is-valid');
+            fname.classList.add('is-invalid');
+
             erFname.innerHTML = "Fill in your first name";
             noErr = false;
      }
-     if(surname == "" || surname.length < 3) {
+     if(surname.value == "" || surname.value.length < 3) {
 
             event.preventDefault();
             erSurname.classList.remove('hide');
-            document.getElementById('er-surname').innerHTML = "Fill in your Surname";
+            surname.classList.remove('is-valid');
+            surname.classList.add('is-invalid');
+            erSurname.innerHTML = "Fill in your Surname";
             noErr = false;
     }
-    if(!email2.match(emailFormat)){
+    if(!email2.value.match(emailFormat)){
             event.preventDefault();
             erEmail.classList.remove('hide');
-            document.querySelector('#er-email').innerHTML = "wrong email format";
+            email2.classList.remove('is-valid');
+            email2.classList.add('is-invalid');
+            erEmail.innerHTML = "wrong email format";
             noErr = false;
       }
-      if (selectList == "select city"){
-        event.preventDefault();
-        erCity.classList.remove('hide');
-        erCity.innerHTML = " Select a city";
+      if (selectList.value == "select city"){
+          event.preventDefault();
+          erCity.classList.remove('hide');
+          selectList.classList.remove('is-valid');
+          selectList.classList.add('is-invalid');
+          erCity.innerHTML = "Select a city";
       }
       if(noErr) {
-            // event.preventDefault()
+            event.preventDefault()
             console.log('form validation with no errors');
             console.log('selection city = '+ selectList);
             console.log(noErr);
