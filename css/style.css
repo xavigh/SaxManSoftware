@@ -68,7 +68,7 @@ header img{
   display:none;
 }
 #er-fname, #er-surname, #er-email, #er-city
-,#erPass1 {
+,#erPass1, #erPass2{
   color: red;
 }
 

@@ -2,8 +2,8 @@
 //validate Register form
 var fname    = document.querySelector('#fname');
 var surname  = document.querySelector('#surname');
+var selectCity = document.querySelector('#selection');
 var email2   = document.querySelector('#email2');
-var selectList = document.querySelector('#selection');
 var password1 = document.querySelector('#pwd1');
 var password2 = document.querySelector('#pwd2');
 
@@ -32,16 +32,23 @@ function validateForm(){
       erSurname.classList.add('hide');
       erEmail.classList.add('hide');
       erCity.classList.add('hide');
+      erPass1.classList.add('hide');
+      erPass2.classList.add('hide');
+
       let noErr = true;
 
       fname.classList.remove('is-invalid');
       fname.classList.add('is-valid');
-      surname.classList.remove('is-invalid');
       surname.classList.add('is-valid');
-      selectList.classList.remove('is-invalid');
-      selectList.classList.add('is-valid');
+      surname.classList.remove('is-invalid');
+      selectCity.classList.remove('is-invalid');
+      selectCity.classList.add('is-valid');
       email2.classList.remove('is-invalid');
       email2.classList.add('is-valid');
+      password2.classList.remove('is-invalid');
+      password2.classList.add('is-valid');
+      password1.classList.remove('is-invalid');
+      password1.classList.add('is-valid');
 
 
     //validation of input fields star here
@@ -66,29 +73,55 @@ function validateForm(){
     }
     if(!email2.value.match(emailFormat)){
             event.preventDefault();
-            erEmail.classList.remove('hide');
             email2.classList.remove('is-valid');
             email2.classList.add('is-invalid');
+            erEmail.classList.remove('hide');
             erEmail.innerHTML = "wrong email format";
             noErr = false;
-      }
-      if (selectList.value == "select city"){
+    }
+
+    if (selectCity.value == "select city"){
           event.preventDefault();
+          selectCity.classList.remove('is-valid');
+          selectCity.classList.add('is-invalid');
           erCity.classList.remove('hide');
-          selectList.classList.remove('is-valid');
-          selectList.classList.add('is-invalid');
           erCity.innerHTML = "Select a city";
+            noErr = false;
       }
-      if (password1.value == "" || password1.value.length < 3 || password1.value != password2.value ){
-            selectList.classList.remove('is-valid');
-            selectList.classList.add('is-invalid');
+
+      if (password1.value == "" ||
+          password1.value.length < 3){
+
+            event.preventDefault();
+            password1.classList.remove('is-valid');
+            password1.classList.add('is-invalid');
+            erPass1.classList.remove('hide');
             erPass1.innerHTML = "wrong password format";
+              noErr = false;
+      }
+      if (password2.value == "" ||
+          password2.value.length < 3){
+
+            event.preventDefault();
+            password2.classList.remove('is-valid');
+            password2.classList.add('is-invalid');
+            erPass2.classList.remove('hide');
+            erPass2.innerHTML = "wrong password format";
+              noErr = false;
+      }
+      if(  spellCheck()== false ){
+        event.preventDefault();
+        password2.classList.remove('is-valid');
+        password2.classList.add('is-invalid');
+        erPass2.classList.remove('hide');
+        erPass2.innerHTML = "Passwords do not matchsdfas";
+          noErr = false;
       }
       if(noErr) {
-            event.preventDefault()
+            event.preventDefault();
             console.log('form validation with no errors');
-            console.log('selection city = '+ selectList);
-            console.log(noErr);
+            console.log('selection city = '+ selectCity);
+            console.log('noErr = '+ noErr);
       }
 
 }//end function validate Form
@@ -96,14 +129,30 @@ function validateForm(){
 
 
 function spellCheck(){
-  var enteredPassword = password2.value;
-  var beguinTypingPassword = enteredPassword.substring(0,enteredPassword.value);
-  console.log(enteredPassword);
+      var inputPassword2 = password2.value;
+      var comparingPasswords = password1.value.substring(0,inputPassword2.length);
+
+      if(inputPassword2 == comparingPasswords ){
+        password2.classList.remove('is-invalid');
+        password2.classList.add('is-valid');
+        erPass2.classList.add('hide');
+
+      }else{
+        event.preventDefault();
+        password2.classList.remove('is-valid');
+        password2.classList.add('is-invalid');
+        erPass2.classList.remove('hide');
+        erPass2.innerHTML = "password do not match !";
+        return false;
+
+      }
+
+
 
 }
 
 function start(){
-  var textEnteredLength =  password2.value.length;
-  console.log(textEnteredLength);
+      var textEnteredLength =  password2.value.length;
+      console.log(textEnteredLength);
 
 }
