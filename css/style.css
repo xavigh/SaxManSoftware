@@ -67,7 +67,8 @@ header img{
 .hide{
   display:none;
 }
-#er-fname, #er-surname, #er-email, #er-city {
+#er-fname, #er-surname, #er-email, #er-city
+,#erPass1 {
   color: red;
 }
 

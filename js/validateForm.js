@@ -1,16 +1,24 @@
 
 //validate Register form
+var fname    = document.querySelector('#fname');
+var surname  = document.querySelector('#surname');
+var email2   = document.querySelector('#email2');
+var selectList = document.querySelector('#selection');
+var password1 = document.querySelector('#pwd1');
+var password2 = document.querySelector('#pwd2');
+
+// trigger event handler to detect the keyboard
+//user is registering compare password input
+password2.addEventListener('keypress', start, false);
+password2.addEventListener('keyup',spellCheck, false);
+
+
 function validateForm(){
       // form input values
-      var fname    = document.querySelector('#fname');
-      var surname  = document.querySelector('#surname');
-      var email2   = document.querySelector('#email2');
-      var selectList = document.querySelector('#selection');
-      var password = document.querySelector('#pwd');
-      var password = document.querySelector('#pwd2');
       // testing use
       // console.log("fname = "+fname +",surname = "+ surname + ",email2 = " + email2)
-      // regExp to validate input email format
+
+      // comments: regExp to validate input email format
       var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
       // error messages target element
@@ -18,6 +26,7 @@ function validateForm(){
       var erSurname = document.querySelector('#er-surname');
       var erEmail = document.querySelector('#er-email');
       var erCity = document.querySelector('#er-city');
+
       //DOM element var to show and hide errors
       erFname.classList.add('hide');
       erSurname.classList.add('hide');
@@ -35,8 +44,8 @@ function validateForm(){
       email2.classList.add('is-valid');
 
 
-      //validation of input fields star here
-      if (fname.value == "" || fname.value.length < 3) {
+    //validation of input fields star here
+     if (fname.value == "" || fname.value.length < 3) {
             event.preventDefault();
             event.stopPropagation();
             erFname.classList.remove('hide');
@@ -70,6 +79,11 @@ function validateForm(){
           selectList.classList.add('is-invalid');
           erCity.innerHTML = "Select a city";
       }
+      if (password1.value == "" || password1.value.length < 3 || password1.value != password2.value ){
+            selectList.classList.remove('is-valid');
+            selectList.classList.add('is-invalid');
+            erPass1.innerHTML = "wrong password format";
+      }
       if(noErr) {
             event.preventDefault()
             console.log('form validation with no errors');
@@ -78,3 +92,18 @@ function validateForm(){
       }
 
 }//end function validate Form
+
+
+
+function spellCheck(){
+  var enteredPassword = password2.value;
+  var beguinTypingPassword = enteredPassword.substring(0,enteredPassword.value);
+  console.log(enteredPassword);
+
+}
+
+function start(){
+  var textEnteredLength =  password2.value.length;
+  console.log(textEnteredLength);
+
+}
