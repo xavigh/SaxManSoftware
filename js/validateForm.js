@@ -88,8 +88,7 @@ function validateForm(){
               noErr = false;
       }
 
-      if (password1.value == "" ||
-          password1.value.length < 3){
+      if (password1.value == ""){
 
             event.preventDefault();
             password1.classList.remove('is-valid');
@@ -98,13 +97,28 @@ function validateForm(){
             erPass1.innerHTML = "wrong password format";
             noErr = false;
       }
-      if (password2.value == "" ||
-          password2.value.length < 3){
+      if (password1.value.length < 3){
+            event.preventDefault();
+            password2.classList.remove('is-valid');
+            password2.classList.add('is-invalid');
+            erPass2.classList.remove('hide');
+            erPass2.innerHTML = "The minimum length of password is 3!";
+            noErr = false;
+      }  // form input values
+      if (password2.value == ""){
             event.preventDefault();
             password2.classList.remove('is-valid');
             password2.classList.add('is-invalid');
             erPass2.classList.remove('hide');
             erPass2.innerHTML = "wrong password format";
+            noErr = false;
+      }  // form input values
+      if (password2.value.length < 3){
+            event.preventDefault();
+            password2.classList.remove('is-valid');
+            password2.classList.add('is-invalid');
+            erPass2.classList.remove('hide');
+            erPass2.innerHTML = "Minimum length of password is 3!";
             noErr = false;
       }  // form input values
 
