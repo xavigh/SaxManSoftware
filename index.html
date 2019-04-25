@@ -100,15 +100,18 @@
 </div>
 <!-- Bootstrap modal2 form to Register user -->
 <div id="registerModal" class="container modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
-    <!-- Modal content-->
-    <div class="modal-content text-dark ">
-      <div class="modal-header">
-        <h4 class="modal-title">Register</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-        <div class="modal-body " >
+
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content text-dark ">
+          <div class="modal-header">
+            <h4 class="modal-title">Register</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+            <div class="modal-body " >
           <!-- FORM REGISTER -->
+      <div class="row">  <!-- ROW bootstrap -->
+        <div class="col-sm-4">
           <form action="#" name="myForm"   class="RegisterValidation" autocomplete = "on">
             <div class="form-group">
               <label for="fname">First Name:</label>
@@ -141,6 +144,8 @@
               <label for="country">Country:</label>
               <input type="text" class="form-control"  id="country">
             </div>
+        </div> <!-- end first col bootstrap  -->
+        <div class="col-sm-4">
             <div class="form-group">
               <label for="postalCode">postalCode:</label>
               <input type="text" class="form-control"  id="postalCode">
@@ -166,9 +171,12 @@
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox"> Remember me </label>
             </div>
+          <div class"">
             <button type="submit" onclick="validateForm()" class="btn btn-primary">Submit</button>
           </form>
         </div>
+      </div><!--end div col -->
+    </div><!--end div row -->
 
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

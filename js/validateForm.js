@@ -12,11 +12,8 @@ var password2 = document.querySelector('#pwd2');
 password2.addEventListener('keypress', start, false);
 password2.addEventListener('keyup',spellCheck, false);
 
-
+  // form input values
 function validateForm(){
-      // form input values
-      // testing use
-      // console.log("fname = "+fname +",surname = "+ surname + ",email2 = " + email2)
 
       // comments: regExp to validate input email format
       var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -37,21 +34,23 @@ function validateForm(){
 
       let noErr = true;
 
-      fname.classList.remove('is-invalid');
-      fname.classList.add('is-valid');
-      surname.classList.add('is-valid');
-      surname.classList.remove('is-invalid');
-      selectCity.classList.remove('is-invalid');
-      selectCity.classList.add('is-valid');
-      email2.classList.remove('is-invalid');
-      email2.classList.add('is-valid');
-      password2.classList.remove('is-invalid');
-      password2.classList.add('is-valid');
-      password1.classList.remove('is-invalid');
-      password1.classList.add('is-valid');
+
+        fname.classList.add('is-valid');
+        surname.classList.add('is-valid');
+        email2.classList.add('is-valid');
+        selectCity.classList.add('is-valid');
+        password1.classList.add('is-valid');
+        password2.classList.add('is-valid');
+
+        fname.classList.remove('is-invalid');
+        surname.classList.remove('is-invalid');
+        selectCity.classList.remove('is-invalid');
+        email2.classList.remove('is-invalid');
+        password1.classList.remove('is-invalid');
+        password2.classList.remove('is-invalid');
 
 
-    //validation of input fields star here
+    //validation of input fields, check errors
      if (fname.value == "" || fname.value.length < 3) {
             event.preventDefault();
             event.stopPropagation();
@@ -81,12 +80,12 @@ function validateForm(){
     }
 
     if (selectCity.value == "select city"){
-          event.preventDefault();
-          selectCity.classList.remove('is-valid');
-          selectCity.classList.add('is-invalid');
-          erCity.classList.remove('hide');
-          erCity.innerHTML = "Select a city";
-            noErr = false;
+            event.preventDefault();
+            selectCity.classList.remove('is-valid');
+            selectCity.classList.add('is-invalid');
+            erCity.classList.remove('hide');
+            erCity.innerHTML = "Select a city";
+              noErr = false;
       }
 
       if (password1.value == "" ||
@@ -97,25 +96,43 @@ function validateForm(){
             password1.classList.add('is-invalid');
             erPass1.classList.remove('hide');
             erPass1.innerHTML = "wrong password format";
-              noErr = false;
+            noErr = false;
       }
       if (password2.value == "" ||
           password2.value.length < 3){
-
             event.preventDefault();
             password2.classList.remove('is-valid');
             password2.classList.add('is-invalid');
             erPass2.classList.remove('hide');
             erPass2.innerHTML = "wrong password format";
+            noErr = false;
+      }  // form input values
+
+      if(password1.value != password2.value && (password1 !="" || password2 !="")){
+              event.preventDefault();
+              console.log(password1.value +""+ password2.value);
+
+              password1.classList.remove('is-valid');
+              password1.classList.add('is-invalid');
+              erPass1.classList.remove('hide');
+              erPass1.innerHTML = "wrong password match";
+
+              password2.classList.remove('is-valid');
+              password2.classList.add('is-invalid');
+              erPass2.classList.remove('hide');
+              erPass2.innerHTML = "wrong password match";
               noErr = false;
+
       }
-      if(  spellCheck()== false ){
-        event.preventDefault();
-        password2.classList.remove('is-valid');
-        password2.classList.add('is-invalid');
-        erPass2.classList.remove('hide');
-        erPass2.innerHTML = "Passwords do not matchsdfas";
-          noErr = false;
+
+      if( spellCheck() == false ){
+        console.log("spellCheck()="+ spellCheck());
+            event.preventDefault();
+            password2.classList.remove('is-valid');
+            password2.classList.add('is-invalid');
+            erPass2.classList.remove('hide');
+            erPass2.innerHTML = "Passwords do not match 1";
+            noErr = false;
       }
       if(noErr) {
             event.preventDefault();
@@ -130,19 +147,33 @@ function validateForm(){
 
 function spellCheck(){
       var inputPassword2 = password2.value;
-      var comparingPasswords = password1.value.substring(0,inputPassword2.length);
+      var comparingPas1 = password1.value.substring(0,inputPassword2.length);
 
-      if(inputPassword2 == comparingPasswords ){
-        password2.classList.remove('is-invalid');
-        password2.classList.add('is-valid');
+      console.log("inputInPas2substring = " +comparingPas1);
+
+      if(inputPassword2 !="" && inputPassword2 != comparingPas1 && inputPassword2.length != comparingPas1.length){
+        event.preventDefault();
+        password2.classList.remove('is-valid');
+        password2.classList.add('is-invalid');
         erPass2.classList.add('hide');
+        erPass2.innerHTML = "password do not match 2 !";
+        return false;
 
-      }else{
+      }
+      if(inputPassword2 == comparingPas1 && inputPassword2 != "" && inputPassword2.length >2){
+        password2.classList.remove('is-invalid');
+        // password2.classList.add('is-valid');
+        erPass2.classList.add('hide');
+        return true;
+      }
+
+
+      else {
         event.preventDefault();
         password2.classList.remove('is-valid');
         password2.classList.add('is-invalid');
         erPass2.classList.remove('hide');
-        erPass2.innerHTML = "password do not match !";
+        erPass2.innerHTML = "password do not match 2 !";
         return false;
 
       }
