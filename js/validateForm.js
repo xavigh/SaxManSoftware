@@ -2,21 +2,21 @@
 
 
   // form input values
-  const fname    = document.querySelector('#fname');
-  const surname  = document.querySelector('#surname');
-  const selectCity = document.querySelector('#selection');
-  const email2   = document.querySelector('#email2');
-  const password1 = document.querySelector('#pwd1');
-  const password2 = document.querySelector('#pwd2');
+  var fname    = document.querySelector('#fname');
+  var surname  = document.querySelector('#surname');
+  var selectCity = document.querySelector('#selection');
+  var email2   = document.querySelector('#email2');
+  var password1 = document.querySelector('#pwd1');
+  var password2 = document.querySelector('#pwd2');
 
 
   // trigger event handler to detect the keyboard
 
 
   password1.addEventListener('blur',validatePassword, false);
-
+  password1.addEventListener('focus',validatePassword, false);
   password2.addEventListener('presskey',spellCheck, false);
-  password2.addEventListener('blur',spellCheck, false);
+  password2.addEventListener('keyup',spellCheck, false);
 
 
 
@@ -86,7 +86,7 @@
             erFname.innerHTML = "Fill in your first name";
             noErr = false;
      }
-     if ( fname.value.length < 3 && fname != "") {
+     if ( fname.value.length < 3 && fname.value != "") {
             event.preventDefault();
             event.stopPropagation();
             erFname.classList.remove('hide');
@@ -105,7 +105,7 @@
             erSurname.innerHTML = "Fill in your Surname";
             noErr = false;
     }
-    if(surname.value.length < 3 && fname != "") {
+    if(surname.value.length < 3 && surname.value != "") {
 
            event.preventDefault();
            erSurname.classList.remove('hide');
@@ -158,9 +158,7 @@ function spellCheck(){
 
 
       var inputPassword2 = password2.value;
-      var subStringPw1  = password1.value.substring(0,inputPassword2.length);
-
-
+      var subStringPw1  = password1.value.substring(0,password1.length);
 
 
       if(inputPassword2 !="" && inputPassword2 != subStringPw1 && inputPassword2.length != subStringPw1.length ){
