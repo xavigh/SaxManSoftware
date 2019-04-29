@@ -1,15 +1,14 @@
 
-
-
   // form input values
-  const fname    = document.querySelector('#fname');
-  const surname  = document.querySelector('#surname');
-  const selectCity = document.querySelector('#selection');
-  const email2   = document.querySelector('#email2');
-  const password1 = document.querySelector('#pwd1');
-  const password2 = document.querySelector('#pwd2');
-
-
+  var fname    = document.querySelector('#fname');
+  var surname  = document.querySelector('#surname');
+  var selectCity = document.querySelector('#selection');
+  var email2   = document.querySelector('#email2');
+  var password1 = document.querySelector('#pwd1');
+  var password2 = document.querySelector('#pwd2');
+	var noErr = false;
+  var shortString1 = false;
+  var shortString2 = false;
   // trigger event handler to detect the keyboard
 
 
@@ -35,8 +34,7 @@
   var erPass1 = document.querySelector('#er-pwd1');
   var erPass2 = document.querySelector('#er-pwd2');
 
-  var shortString1 = false;
-  var shortString2 = false;
+
 
 
 //validate Register form
@@ -57,7 +55,7 @@
       erPass1.classList.add('hide');
       erPass2.classList.add('hide');
 
-      let noErr = true;
+      var noErr = true;
 
 
         fname.classList.add('is-valid');
@@ -175,7 +173,7 @@ function spellCheck(){
         return false;
 
       }
-      if(inputPassword2 == subStringPw1 && inputPassword2 != ""  && !shortString1 && !shortString2){
+      if(inputPassword2 == subStringPw1 && inputPassword2 != "" ){
         password1.classList.remove('is-invalid');
         password1.classList.add('is-valid');
         password2.classList.remove('is-invalid');
@@ -220,7 +218,7 @@ function validatePassword() {
         erPass2.classList.remove('hide');
         erPass2.innerHTML = "Minimum length of password is 3!";
         noErr = false;
-        var shortString2 = true;
+        shortString2 = true;
   }
   if(inputPassword2 != password1.value){
 
@@ -246,7 +244,7 @@ function validatePassword() {
         erPass1.classList.remove('hide');
         erPass1.innerHTML = "The minimum length of password is 3!";
         noErr = false;
-        var shortString1 = true;
+        shortString1 = true;
   }
 
   if (password2.value == ""){
