@@ -13,9 +13,12 @@
   // trigger event handler to detect the keyboard
 
 
-  password2.addEventListener('keypress', start, false);
-  password2.addEventListener('keyup',spellCheck, false);
-  password1.addEventListener('keyup',spellCheck, false);
+  password1.addEventListener('blur',validatePassword, false);
+
+  password2.addEventListener('presskey',spellCheck, false);
+  password2.addEventListener('blur',spellCheck, false);
+
+
 
 
 
@@ -129,68 +132,16 @@
             erCity.innerHTML = "Select a city";
               noErr = false;
       }
-
-      if (password1.value == ""){
-            event.preventDefault();
-            password1.classList.remove('is-valid');
-            password1.classList.add('is-invalid');
-            erPass1.classList.remove('hide');
-            erPass1.innerHTML = "Enter surname";
-            noErr = false;
-      }
-      if (password1.value.length < 3){
-            event.preventDefault();
-            password1.classList.remove('is-valid');
-            password1.classList.add('is-invalid');
-            erPass1.classList.remove('hide');
-            erPass1.innerHTML = "The minimum length of password is 3!";
-            noErr = false;
-            var shortString1 = true;
-      }  // form input values
-      if (password2.value == ""){
-            event.preventDefault();
-            password2.classList.remove('is-valid');
-            password2.classList.add('is-invalid');
-            erPass2.classList.remove('hide');
-            erPass2.innerHTML = "Enter name";
-            noErr = false;
-
-      }  // form input values
-      if (password2.value.length < 3){
-            event.preventDefault();
-            password2.classList.remove('is-valid');
-            password2.classList.add('is-invalid');
-            erPass2.classList.remove('hide');
-            erPass2.innerHTML = "Minimum length of password is 3!";
-            noErr = false;
-            var shortString2 = true;
-      }  // form input values
-
-      if(password1.value != password2.value && password1 !="" && (password2 !="" && !shortString1  || !shortString2) ){
-              event.preventDefault();
-              console.log(password1.value +""+ password2.value);
-
-              password1.classList.remove('is-valid');
-              password1.classList.add('is-invalid');
-              erPass1.classList.remove('hide');
-              erPass1.innerHTML = "wrong password match";
-
-              password2.classList.remove('is-valid');
-              password2.classList.add('is-invalid');
-              erPass2.classList.remove('hide');
-              erPass2.innerHTML = "wrong password match";
-              noErr = false;
-      }
-
       if( spellCheck() == false && !shortString1 && !shortString2){
         console.log("spellCheck()="+ spellCheck());
             event.preventDefault();
             password2.classList.remove('is-valid');
             password2.classList.add('is-invalid');
             erPass2.classList.remove('hide');
-            erPass2.innerHTML = "Passwords do not match 1";
+            erPass2.innerHTML = "Passwords do not match validationForm()";
             noErr = false;
       }
+
       if (noErr) {
             event.preventDefault();
             console.log('form validation with no errors');
@@ -207,23 +158,24 @@ function spellCheck(){
 
 
       var inputPassword2 = password2.value;
-      var comparingPas1  = password1.value.substring(0,inputPassword2.length);
+      var subStringPw1  = password1.value.substring(0,inputPassword2.length);
 
 
 
-      if(inputPassword2 !="" && inputPassword2 != comparingPas1 && inputPassword2.length != comparingPas1.length && !shortString1 && !shortString2){
+
+      if(inputPassword2 !="" && inputPassword2 != subStringPw1 && inputPassword2.length != subStringPw1.length ){
         event.preventDefault();
         password2.classList.remove('is-valid');
         password2.classList.add('is-invalid');
         erPass2.classList.add('hide');
         erPass2.innerHTML = "password do not match...if one !";
 
-        console.log("inputInPas2substring = " +comparingPas1);
-        console.log("comparingPas1 = " +comparingPas1);
+        console.log("inputInPas2substring = " +subStringPw1);
+        console.log("subStringPw1 = " +subStringPw1);
         return false;
 
       }
-      if(inputPassword2 == comparingPas1 && inputPassword2 != "" && inputPassword2.length >2 && !shortString1 && !shortString2){
+      if(inputPassword2 == subStringPw1 && inputPassword2 != ""  && !shortString1 && !shortString2){
         password1.classList.remove('is-invalid');
         password1.classList.add('is-valid');
         password2.classList.remove('is-invalid');
@@ -231,30 +183,96 @@ function spellCheck(){
         erPass2.classList.add('hide');
         erPass1.classList.add('hide');
 
-        console.log("inputInPas2substring = " +comparingPas1);
-        console.log("comparingPas1 = " + inputPassword2);
+        console.log("inputInPas2substring = " +subStringPw1);
+        console.log("subStringPw1 = " + inputPassword2);
 
         return true;
       }
+}
 
 
-      else {
+function validatePassword() {
+
+  var inputPassword2 = password2.value;
+  password1.addEventListener('focus',validatePassword, false);
+
+  if (password1.value.length >= 3 ){
+        event.preventDefault();
+        password1.classList.remove('is-invalid');
+        password1.classList.add('is-valid');
+        erPass1.classList.add('hide');
+        erPass1.innerHTML = "The minimum length of password is 3!";
+        var shortString1 = false;
+  }
+  if (password2.value.length >= 3 ){
+        event.preventDefault();
+        password2.classList.remove('is-invalid');
+        password2.classList.add('is-valid');
+        erPass2.classList.add('hide');
+        erPass2.innerHTML = "The minimum length of password is 3!";
+        var shortString2 = false;
+  }
+
+  if (password2.value.length < 3 && password2.value != ""){
         event.preventDefault();
         password2.classList.remove('is-valid');
         password2.classList.add('is-invalid');
         erPass2.classList.remove('hide');
-        erPass2.innerHTML = "password do not match, err else error. !";
+        erPass2.innerHTML = "Minimum length of password is 3!";
+        noErr = false;
+        var shortString2 = true;
+  }
+  if(inputPassword2 != password1.value){
 
-        return false;
+        password2.classList.remove('is-valid');
+        password2.classList.add('is-invalid');
+        erPass2.classList.add('hide');
+        erPass2.innerHTML = "password do not match !";
 
-      }
+
+  }
+  if (password1.value == ""){
+        event.preventDefault();
+        password1.classList.remove('is-valid');
+        password1.classList.add('is-invalid');
+        erPass1.classList.remove('hide');
+        erPass1.innerHTML = "Enter password";
+        noErr = false;
+  }
+  if (password1.value.length < 3 && password1.value != ""){
+        event.preventDefault();
+        password1.classList.remove('is-valid');
+        password1.classList.add('is-invalid');
+        erPass1.classList.remove('hide');
+        erPass1.innerHTML = "The minimum length of password is 3!";
+        noErr = false;
+        var shortString1 = true;
+  }
+
+  if (password2.value == ""){
+        event.preventDefault();
+        password2.classList.remove('is-valid');
+        password2.classList.add('is-invalid');
+        erPass2.classList.remove('hide');
+        erPass2.innerHTML = "Confirm password";
+        noErr = false;
+
+  }  // form input values
+    // form input values
+
+    if(password1.value != password2.value &&
+      password1 !="" && !shortString1 &&
+      password2 != "" && !shortString2){
+          event.preventDefault();
+          console.log(password1.value +""+ password2.value);
 
 
 
-}
-
-function start(){
-      var textEnteredLength =  password2.value.length;
-      console.log(textEnteredLength);
+          password2.classList.remove('is-valid');
+          password2.classList.add('is-invalid');
+          erPass2.classList.remove('hide');
+          // erPass2.innerHTML = "wrong password match";
+          noErr = false;
+  }
 
 }
