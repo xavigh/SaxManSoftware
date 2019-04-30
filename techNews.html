@@ -15,18 +15,59 @@
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <title>Music Tech news</title>
+  <title>Products and software</title>
 </head>
 <!-- Add bootstrap container to the whole content  -->
 <body class="container">
 
   <!-- Header staff here -->
-  <header>
+  <header class="container" >
+    <div class="row">
+              <div class="col-sm-4 col-lg-4 col-xl-4">
+                  <img class="img-fluid" src="images/saxoPlayer.jpeg" alt="logo" title="Saxo player"/>
 
-      <img  class="img-fluid" src="images/saxoPlayer.jpeg" alt="logo" title="Saxo player" width="304" height="236">
-      <h1>Sax Man Digital Goods</h1>
+              </div>
+              <div class="col-sm-8 col-lg-8 col-xl-8 align-text-bottom">
+                <h1 class="text-left vertical-center">Sax Man Digital Goods</h1>
+              </div>
 
-  </header><!-- container -->
+   </div> <!--end row -->
+   <div class="border border-top-0 border-left-0 border-right-0 text-right">
+       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Login</button>
+     | <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#registerModal">Register</button>
+   </div>
+   <!-- NAVIGATION BAR -->
+       <nav class="navbar navbar-expand-sm justify-content-center" id="collapsibleNavbar" role="navigation">
+          <ul class="navbar-nav nav-pills justify-content-center bg-md">
+
+             <li class="nav-item">
+                 <a class="nav-link active" href="index.html">Home</a>
+             </li>
+             <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="products.html">Products</a>
+
+                 <div class="dropdown-menu">
+                             <a class="dropdown-item" href="products.html">HLX</a>
+                             <a class="dropdown-item" href="products.html">Boss</a>
+                             <a class="dropdown-item" href="products.html">Line 6</a>
+                 </div>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="products.html">Software</a>
+            </li>
+            <li class="nav-item">
+                 <a class="nav-link" href="technews.html">Tech News</a>
+            </li>
+         </ul>
+       </nav>
+            <!-- navbar end tag-->
+
+
+
+    <!-- Modal class to add login form-->
+
+
+</header><!-- header end tag -->
 
 <!-- Main content here -->
   <main>
@@ -38,30 +79,7 @@
     <span class="text-white small"><p>nav button.</p></span>
     </button> -->
 
-    <nav class="navbar-expand-sm" id="collapsibleNavbar">
-      <ul class="navbar-nav nav-pills justify-content-center bg-md">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
 
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">HLX</a>
-            <a class="dropdown-item" href="#">Boss</a>
-            <a class="dropdown-item" href="#">Line 6</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="products.html">Software</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="technews.html">Tech News</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
 
     <!-- Media section -->
     <!--media section  -->
