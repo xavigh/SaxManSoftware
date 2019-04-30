@@ -6,26 +6,21 @@
   var email2   = document.querySelector('#email2');
   var password1 = document.querySelector('#pwd1');
   var password2 = document.querySelector('#pwd2');
+  // comments: regExp to validate input email format
   var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	var noErr = false;
   var shortString1 = false;
   var shortString2 = false;
+
   // trigger event handler to detect the keyboard
-
-  password1.addEventListener('blur',validatePassword, false);
-  password2.addEventListener('presskey',spellCheck, false);
-  // password2.addEventListener('blur',spellCheck, false);
-
-
-  // fname.addEventListener('keyup', validateForm,false);
   fname.addEventListener('blur', validateName,false);
   surname.addEventListener('blur', validateSurname,false);
   selectCity.addEventListener('blur',validateCity,false);
-
   email2.addEventListener('keyup', validateEmail,false);
+  password1.addEventListener('blur',validatePassword, false);
+  password2.addEventListener('presskey',spellCheck, false);
+
   // error messages target element
-
-
   var erFname   = document.querySelector('#er-fname');
   var erEmail   = document.querySelector('#er-email');
   var erSurname = document.querySelector('#er-surname');
@@ -38,9 +33,8 @@
 
 //validate Register form
   function validateForm() {
-      // comments: regExp to validate input email format
 
-
+      // add valid before validating
       fname.classList.add('is-valid');
       email2.classList.add('is-valid');
       surname.classList.add('is-valid');
@@ -48,7 +42,7 @@
       password1.classList.add('is-valid');
       password2.classList.add('is-valid');
 
-
+      // remove invalid before validating
       fname.classList.remove('is-invalid');
       selectCity.classList.remove('is-invalid');
       surname.classList.remove('is-invalid');
@@ -56,20 +50,17 @@
       password1.classList.remove('is-invalid');
       password2.classList.remove('is-invalid');
 
-        //DOM element var to show and hide errors
-        erFname.classList.add('hide');
-        erSurname.classList.add('hide');
-        erEmail.classList.add('hide');
-        erCity.classList.add('hide');
-        erPass1.classList.add('hide');
-        erPass2.classList.add('hide');
+      //DOM element var to show and hide errors
+      erFname.classList.add('hide');
+      erSurname.classList.add('hide');
+      erEmail.classList.add('hide');
+      erCity.classList.add('hide');
+      erPass1.classList.add('hide');
+      erPass2.classList.add('hide');
 
-        var noErr = true;
-
-
+      var noErr = true;
     //validation of input fields, check errors
      if (fname.value == "") {
-
             event.stopPropagation();
             erFname.classList.remove('hide');
             fname.classList.remove('is-valid');
@@ -131,7 +122,7 @@
       }
 }//end function validate Form
 
-
+// this fuction is to check the input by the user and compare string entered.
 function spellCheck(){
 
       var inputPassword2 = password2.value;
@@ -164,7 +155,7 @@ function spellCheck(){
 
 }
 
-
+// this fuction is to validate the passwords in real time input
 function validatePassword() {
 
   var inputPassword2 = password2.value;
@@ -231,8 +222,8 @@ function validatePassword() {
         erPass2.innerHTML = "Confirm password";
         noErr = false;
 
-  }  // form input values
-    // form input values
+  }
+
 
     if(password1.value != password2.value &&
         password1 !="" && !shortString1 &&
@@ -251,7 +242,7 @@ function validatePassword() {
 
 
 }
-
+// validate fields for the event listeners, individually
 function validateName(){
   if ( fname.value.length < 3 && fname != "") {
 
