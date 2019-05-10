@@ -8,6 +8,14 @@ body {
 
 }
 
+/* FOR DEBUGIN PURPUSE */
+/* body * { border: 1px solid red; } */
+/* add a border to all other elements on the page */
+/* body * { outline: 1px solid red; } */
+/* Alternate: add an outline  to all elements on the page. Won't effect box model */
+
+
+
 h2, h3 {
     font-family: 'Caveat', cursive;
     font-weight: 400;
@@ -18,18 +26,7 @@ h1 {
   /* font-family: 'Boogaloo', cursive; */
   font-family:'Caveat','Allerta Stencil', 'Wendy One',   sans-serif;
 }
-/* Header */
-/*if used fixed-top then  */
-/* header {
-  background-color: #191919;
-} */
 
-/* .content-wrap {
- display: block;
- margin-left: auto;
- margin-right: auto;
- width: 50%;
- } */
 
 header img{
  align-self: left;
@@ -43,11 +40,6 @@ header img{
   padding: 0 2em;
 }
 /* main content */
-
-/* if used fixed-top then */
-/* main {
-  margin-top:20%;
-} */
 
 /* Video */
 .video1 {
