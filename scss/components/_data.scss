@@ -1,0 +1,10 @@
+//data scss file to be imported
+
+$number:1px;
+$list: 1px solid black;
+
+
+
+body {
+    @debug $list;
+}
